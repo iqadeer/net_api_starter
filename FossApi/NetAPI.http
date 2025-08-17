@@ -1,0 +1,6 @@
+@FossApi_HostAddress = http://localhost:5133
+
+GET {{FossApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
