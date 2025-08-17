@@ -73,21 +73,26 @@ namespace NetAPI.API.Tests.Controllers
         }
 
         [Theory]
-        [InlineData("one", "two", "three")]
+        [InlineData("new")]
+        [InlineData("old")]
+        [InlineData("older")]
+        
 
-        public void ShouldDeleteWeather(params string[] weatherList)
+        public void ShouldDeleteWeather(string weather)
         {
-            _sut.Delete("new");
+            _sut.Delete(weather);
 
-            _weatherApiService.Received(1).DeleteWeather("new");
+            _weatherApiService.Received(1).DeleteWeather(weather);
         }
 
         [Theory]
-        [InlineData("one", "two", "three")]
+        [InlineData("new")]
+        [InlineData("old")]
+        [InlineData("older")]
 
-        public void ShouldGetWeatherByIndex(params string[] weatherList)
+        public void ShouldGetWeatherByIndex(string weather)
         {
-            _weatherApiService.GetWeatherByIndex(Arg.Any<int>()).Returns("one");
+            _weatherApiService.GetWeatherByIndex(Arg.Any<int>()).Returns(weather);
 
 
             var response = _sut.GetByIndex(1);
@@ -96,7 +101,7 @@ namespace NetAPI.API.Tests.Controllers
 
             result.ShouldNotBeNull();
 
-            result.Value.ShouldBe("one");
+            result.Value.ShouldBe(weather);
             result.StatusCode.ShouldBe(StatusCodes.Status200OK);
 
             _weatherApiService.Received(1).GetWeatherByIndex(1);
@@ -142,7 +147,7 @@ namespace NetAPI.API.Tests.Controllers
 
             result.Value.ShouldNotBeNull();
 
-            var value = result!.Value as ValidationErrorResponse;
+            var value = result.Value as ValidationErrorResponse;
             value.ShouldNotBeNull();    
 
             value.Message.ShouldBe("Validation failed");
