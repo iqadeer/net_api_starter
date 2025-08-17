@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAPI.API.Tests", "FossApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetAPI.Application.Tests", "Tests\NetAPI.Application.Tests\NetAPI.Application.Tests.csproj", "{C5104855-D78F-47B1-AAB9-11673C7232D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetApi.Infrastructure.Tests", "Tests\NetApi.Infrastructure.Tests\NetApi.Infrastructure.Tests.csproj", "{C08848AE-313F-4E48-8284-4A218D63EC2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{C5104855-D78F-47B1-AAB9-11673C7232D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5104855-D78F-47B1-AAB9-11673C7232D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5104855-D78F-47B1-AAB9-11673C7232D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08848AE-313F-4E48-8284-4A218D63EC2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08848AE-313F-4E48-8284-4A218D63EC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08848AE-313F-4E48-8284-4A218D63EC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08848AE-313F-4E48-8284-4A218D63EC2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{46B7D7BA-1172-4D27-AE81-DAA60A11BA33} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{C5104855-D78F-47B1-AAB9-11673C7232D3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C08848AE-313F-4E48-8284-4A218D63EC2F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2D7D101-7E40-4CBF-B0E1-72EE7AB21B98}

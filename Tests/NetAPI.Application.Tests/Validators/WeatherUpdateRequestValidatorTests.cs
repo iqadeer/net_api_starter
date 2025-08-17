@@ -1,4 +1,7 @@
 ﻿using AutoFixture;
+using FluentValidation.TestHelper;
+using NetAPI.Application.Dtos;
+using NetAPI.Application.Validations;
 
 namespace NetAPI.Application.Tests.Validators
 {
