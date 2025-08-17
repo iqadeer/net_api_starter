@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NetAPI.API.Validations;
 using NetAPI.Application.Dtos;
 using NetAPI.Application.Interfaces;
-using NetAPI.Application.Validations;
 
 namespace NetAPI.API.Controllers
 {

@@ -1,0 +1,8 @@
+---
+config:
+  layout: fixed
+---
+flowchart TD
+    API["API"] --> Application["Application"]
+    Application --> Domain["Domain"]
+    Infrastructure["Infrastructure"] --> Application & Domain

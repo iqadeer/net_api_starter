@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NetAPI.API.Controllers;
+using NetAPI.API.Validations;
 using NetAPI.Application.Dtos;
 using NetAPI.Application.Interfaces;
-using NetAPI.Application.Validations;
 using NSubstitute;
 using Shouldly;
 
