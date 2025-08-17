@@ -1,6 +1,6 @@
-﻿using NetAPI.Domain.Entities;
+﻿using NetAPI.Application.Interfaces;
+using NetAPI.Domain.Entities;
 using NetAPI.Domain.Enums;
-using NetAPI.Domain.Interfaces;
 
 namespace NetAPI.Infrastructure.Repos;
 

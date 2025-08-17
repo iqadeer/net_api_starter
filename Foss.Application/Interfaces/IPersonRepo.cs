@@ -1,6 +1,6 @@
 ﻿using NetAPI.Domain.Entities;
 
-namespace NetAPI.Domain.Interfaces
+namespace NetAPI.Application.Interfaces
 {
     public interface IPersonRepo
     {

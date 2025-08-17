@@ -1,11 +1,9 @@
 using FluentValidation;
-using Foss.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using NetAPI.Application.Interfaces;
 using NetAPI.Application.Mappings;
 using NetAPI.Application.Services;
 using NetAPI.Application.Validations;
-using NetAPI.Domain.Interfaces;
 using NetAPI.Infrastructure;
 using NetAPI.Infrastructure.Repos;
 

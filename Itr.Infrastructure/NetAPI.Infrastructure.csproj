@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Foss.Application\NetAPI.Application.csproj" />
     <ProjectReference Include="..\Foss.Domain\NetAPI.Domain.csproj" />
   </ItemGroup>
 

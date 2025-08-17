@@ -1,5 +1,5 @@
-﻿using NetAPI.Domain.Entities;
-using NetAPI.Domain.Interfaces;
+﻿using NetAPI.Application.Interfaces;
+using NetAPI.Domain.Entities;
 
 namespace NetAPI.Infrastructure.Repos
 {

@@ -2,7 +2,6 @@
 using NetAPI.Application.Dtos;
 using NetAPI.Application.Interfaces;
 using NetAPI.Domain.Entities;
-using NetAPI.Domain.Interfaces;
 
 namespace NetAPI.Application.Services
 {
