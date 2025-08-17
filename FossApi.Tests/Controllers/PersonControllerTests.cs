@@ -1,9 +1,12 @@
 ﻿using AutoFixture;
 using AutoFixture.AutoNSubstitute;
 using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 using NetAPI.API.Controllers;
 using NetAPI.Application.Dtos;
 using NetAPI.Application.Interfaces;
+using Newtonsoft.Json.Linq;
 using NSubstitute;
 using Shouldly;
 
@@ -33,7 +36,11 @@ namespace NetAPI.API.Tests.Controllers
             var response = _sut.Get(2);
 
             response.ShouldNotBeNull();
-            //response.ShouldBe(person);
+            response.ShouldBeOfType<OkObjectResult>();
+
+            var result = response as OkObjectResult;
+            result.ShouldNotBeNull();
+            result.Value.ShouldBe(person);
         }
 
         [Fact]
@@ -45,7 +52,54 @@ namespace NetAPI.API.Tests.Controllers
             var response = _sut.Get();
 
             response.ShouldNotBeNull();
-            // response.ShouldBe(persons);
+            response.ShouldBeOfType<OkObjectResult>();
+
+            var result = response as OkObjectResult;
+            result.ShouldNotBeNull();
+            result.Value.ShouldBe(persons);
+
         }
+
+        [Fact]
+        public async Task ShouldCreatePerson()
+        {
+            var person = _fixture.Create<PersonDto>();
+            _personService.AddPerson(Arg.Any<PersonDto>()).Returns(2);
+            _validator.ValidateAsync(Arg.Any<PersonDto>()).Returns(new ValidationResult());
+            var response = await _sut.Post(person);
+
+            response.ShouldNotBeNull();
+            response.ShouldBeOfType<CreatedAtActionResult>();
+
+            var result = response as CreatedAtActionResult;
+            result.ShouldNotBeNull();
+            dynamic val = result.Value!;
+            var jObject = JObject.FromObject(result.Value!);
+            int id = jObject["Id"]!.Value<int>();
+            id.ShouldBe(2);
+
+        }
+
+        [Fact]
+        public async Task ShouldNotCreatePerson()
+        {
+            var person = _fixture.Create<PersonDto>();
+            _personService.AddPerson(Arg.Any<PersonDto>()).Returns(2);
+            _validator.ValidateAsync(Arg.Any<PersonDto>()).Returns(new ValidationResult(
+                [new ValidationFailure("Prop", "Error")]));
+            var response = await _sut.Post(person);
+
+            response.ShouldNotBeNull();
+            response.ShouldBeOfType<BadRequestObjectResult>();
+
+            var result = response as BadRequestObjectResult;
+            result.ShouldNotBeNull();
+            dynamic val = result.Value!;
+            var jObject = JObject.FromObject(result.Value!);
+            string message= jObject["Message"]!.Value<string>();
+            message.ShouldBe("Validation failed for speaker");
+        }
+
+
     }
 }

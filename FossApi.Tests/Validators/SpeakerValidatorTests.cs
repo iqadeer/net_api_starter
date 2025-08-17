@@ -3,7 +3,7 @@ using NetAPI.API.Validations;
 using NetAPI.Application.Dtos;
 using Shouldly;
 
-namespace NetAPI.Application.Tests.Validators
+namespace NetAPI.API.Tests.Validators
 {
     public class SpeakerValidatorTests
     {

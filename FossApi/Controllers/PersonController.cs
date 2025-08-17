@@ -21,7 +21,7 @@ namespace NetAPI.API.Controllers
         }
 
         // GET api/<PersonController>/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Get([FromRoute]int id)
@@ -48,7 +48,7 @@ namespace NetAPI.API.Controllers
                 });
             }
             var personId = personService.AddPerson(person);
-            return CreatedAtRoute("", new { id = personId });
+            return CreatedAtAction(nameof(Get), new { Id = personId });
         }
 
         // PUT api/<PersonController>/5

@@ -1,5 +1,4 @@
 ﻿using NetAPI.Application.Dtos;
-using NetAPI.Domain.Entities;
 
 namespace NetAPI.Application.Interfaces
 {

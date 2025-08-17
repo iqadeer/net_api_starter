@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Foss.Application\NetAPI.Application.csproj" />
+    <ProjectReference Include="..\..\FossApi\NetAPI.API.csproj" />
   </ItemGroup>
 
   <ItemGroup>

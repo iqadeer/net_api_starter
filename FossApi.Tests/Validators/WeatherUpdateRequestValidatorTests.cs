@@ -3,7 +3,7 @@ using FluentValidation.TestHelper;
 using NetAPI.API.Validations;
 using NetAPI.Application.Dtos;
 
-namespace NetAPI.Application.Tests.Validators
+namespace NetAPI.API.Tests.Validators
 {
     public class WeatherUpdateRequestValidatorTests
     {
